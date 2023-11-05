@@ -313,7 +313,7 @@ function checkpkg {
 		
 function prereqs {
 	sudocheck
-	my_echo -n Installing prequisites...
+	my_echo -n Installing prerequisites...
 	#
 	# It's a Fedora system
 	#
@@ -377,15 +377,17 @@ function prereqs {
 		case `grep DISTRIB_RELEASE /etc/lsb-release` in
 
 		*22.*)
+			#sudo add-apt-repository ppa:ubuntuhandbook1/ppa
+			sudo add-apt-repository ppa:rock-core/qt4
 			PKGLIST="libfontconfig1-dev libxrender-dev libpulse-dev swig g++
 			automake autoconf libtool python-dev libfftw3-dev
 			libcppunit-dev libboost-all-dev libusb-dev libusb-1.0-0-dev fort77
-			libsdl1.2-dev python-wxgtk2.8 git-core guile-1.8-dev
-			libqt4-dev python-numpy ccache python-opengl libgsl0-dev
+			libsdl1.2-dev python3-wxgtk4.0 git-core guile-3.0-dev
+			libqt4-dev python-numpy ccache python3-opengl libgsl0-dev
 			python-cheetah python-lxml doxygen qt4-dev-tools libusb-1.0-0-dev
-			libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools python-qwt5-qt4
-			cmake git-core wget libxi-dev python-docutils gtk2-engines-pixbuf r-base-dev python-tk
-			liborc-0.4-0 libasound2-dev python-gtk2"
+			libqwt-qt5-dev libqwtplot3d-qt5-dev pyqt5-dev-tools cmake
+			git-core wget libxi-dev python-docutils gtk2-engines-pixbuf r-base-dev python-tk
+			liborc-0.4-0 libasound2-dev python-gtk python-qwt"
 			;;
 		
 		*11.*|*12.*)
